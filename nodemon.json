@@ -1,0 +1,13 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules"
+  ],
+  "watch": [
+    "src/**/*"
+  ],
+  "execMap": {
+    "js": "./node_modules/.bin/babel-node"
+  },
+  "signal": "SIGTERM"
+}

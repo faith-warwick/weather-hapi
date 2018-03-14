@@ -4,6 +4,7 @@ const env = process.env.NODE_ENV || 'development'
 const port = process.env.PORT || 5000
 
 const defaultPlugins = async (server) => {
+
   const plugins = [
     { plugin: require('inert') },
     { plugin: require('vision') },
@@ -42,7 +43,7 @@ const defaultPlugins = async (server) => {
       plugin: require('hapi-swagger'),
       options: {
         cors: true,
-        jsonEditor: true,
+        jsonEditor: false,
         documentationPath: '/',
         info: {
           title: 'Example',
@@ -68,7 +69,7 @@ export default async () => {
     },
   }
 
-  if(env !== 'testing') {
+  if (env !== 'testing') {
     options.port = port
   }
 
@@ -76,11 +77,6 @@ export default async () => {
 
   await defaultPlugins(server)
   await server.initialize()
-
-
-  if (env !== 'testing') {
-
-  }
 
   return server
 }
