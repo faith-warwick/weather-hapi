@@ -1,3 +1,5 @@
+import Pkg from '../../package'
+
 /**
  * Loads plugins
  *
@@ -48,7 +50,7 @@ export default async server => {
         documentationPath: '/',
         info: {
           title: 'Example',
-          version: '1.0.0',
+          version: Pkg.version,
           description: 'An example api',
         },
       },

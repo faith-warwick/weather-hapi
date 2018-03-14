@@ -1970,6 +1970,10 @@ hoek@5.x.x, hoek@^5.0.2, hoek@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-5.0.3.tgz#b71d40d943d0a95da01956b547f83c4a5b4a34ac"
 
+hoek@~4.2.0:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/hoek/-/hoek-4.2.1.tgz#9634502aa12c445dd5a7c5734b572bb8738aacbb"
+
 home-or-tmp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/home-or-tmp/-/home-or-tmp-2.0.0.tgz#e36c3f2d2cae7d746a857e38d18d5f32a7882db8"
@@ -3103,6 +3107,12 @@ regjsparser@^0.1.4:
   resolved "https://registry.yarnpkg.com/regjsparser/-/regjsparser-0.1.5.tgz#7ee8f84dc6fa792d3fd0ae228d24bd949ead205c"
   dependencies:
     jsesc "~0.5.0"
+
+relish@^0.2.5:
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/relish/-/relish-0.2.5.tgz#62c4d7c926b213614ec0cbb9f9b69d9e87221d32"
+  dependencies:
+    hoek "~4.2.0"
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
