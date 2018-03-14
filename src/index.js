@@ -1,63 +1,16 @@
 import { Server } from 'hapi'
+import SetupPlugins from './configuration/plugins'
 
 const env = process.env.NODE_ENV || 'development'
 const port = process.env.PORT || 5000
 
-const defaultPlugins = async (server) => {
-
-  const plugins = [
-    { plugin: require('inert') },
-    { plugin: require('vision') },
-    { plugin: require('blipp') },
-    {
-      plugin: require('good'),
-      options: {
-        ops: {
-          interval: 5000,
-        },
-        reporters: {
-          console: [
-            {
-              module: 'good-squeeze',
-              name: 'Squeeze',
-              args: [{
-                log: '*',
-                response: '*',
-                request: '*',
-                error: '*',
-              }],
-            },
-            {
-              module: 'good-console',
-              args: [{
-                log: '*',
-                response: '*',
-                request: '*',
-                error: '*',
-              }],
-            }, 'stdout'],
-        },
-      },
-    },
-    {
-      plugin: require('hapi-swagger'),
-      options: {
-        cors: true,
-        jsonEditor: false,
-        documentationPath: '/',
-        info: {
-          title: 'Example',
-          version: '1.0.0',
-          description: 'An example api',
-        },
-      },
-    },
-  ]
-
-  await server.register(plugins)
-}
-
-
+/**
+ * Sets up the server with plugins and defaults
+ *
+ * Doesn't start the server
+ *
+ * @returns {Promise<Server>}
+ */
 export default async () => {
 
   const options = {
@@ -75,7 +28,7 @@ export default async () => {
 
   const server = new Server(options)
 
-  await defaultPlugins(server)
+  await SetupPlugins(server)
   await server.initialize()
 
   return server

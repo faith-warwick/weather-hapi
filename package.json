@@ -5,15 +5,14 @@
   "scripts": {
     "start": "node .",
     "start:dev": "./node_modules/.bin/nodemon . --exec babel-node --presets env",
-    "prepublish": "npm run build",
+    "prepublish": "npm run transpile",
     "test": "mocha test/**/*.test.js --compilers js:babel-register ",
-    "build": "babel src -d build -s inline"
+    "transpile": "babel src -d build -s inline"
   },
   "keywords": [],
   "author": "",
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-eslint": "7",
     "babel-polyfill": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.24.1",
