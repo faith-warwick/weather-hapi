@@ -1,3 +1,9 @@
+/**
+ * Loads plugins
+ *
+ * @param {Server} server
+ * @returns {Promise}
+ */
 export default async server => {
 
   const plugins = [
