@@ -1,7 +1,7 @@
 --require babel-register
+--require babel-polyfill
 --require ./test/helper.js
 --es_staging
 --recursive
 --reporter min
 --ui bdd
---watch

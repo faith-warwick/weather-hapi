@@ -6,7 +6,7 @@
     "start": "node .",
     "start:dev": "babel-watch . --watch src",
     "prepublish": "npm run transpile",
-    "test": "mocha test/**/*.test.js --compilers js:babel-register ",
+    "test": "mocha test/**/*.test.js",
     "transpile": "babel src -d build -s inline"
   },
   "keywords": [],
