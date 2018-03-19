@@ -7,13 +7,13 @@
     "start:dev": "babel-watch . --watch src",
     "prepublish": "npm run transpile",
     "test": "mocha test/**/*.test.js",
-    "transpile": "babel src -d build -s inline"
+    "transpile": "babel src -d build -s inline",
+    "deploy": "npm run transpile && now . --public -e NODE_ENV=production"
   },
   "keywords": [],
   "author": "",
   "devDependencies": {
     "babel-cli": "^6.24.1",
-    "babel-polyfill": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.24.1",
     "code": "^5.1.2",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "babel-watch": "^2.0.7",
+    "babel-polyfill": "^6.22.0",
     "blipp": "^3.0.0",
     "boom": "^7.1.1",
     "good": "^8.0.0-rc1",
