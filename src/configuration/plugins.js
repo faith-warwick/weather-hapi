@@ -1,4 +1,5 @@
 import Pkg from '../../package'
+import weatherPlug from '../plugins/weather'
 
 /**
  * Loads plugins
@@ -12,6 +13,7 @@ export default async server => {
     { plugin: require('inert') },
     { plugin: require('vision') },
     { plugin: require('blipp') },
+    {plugin: weatherPlug},
     {
       plugin: require('good'),
       options: {
@@ -59,3 +61,4 @@ export default async server => {
 
   await server.register(plugins)
 }
+

@@ -2,6 +2,7 @@ import { Server } from 'hapi'
 import Relish from 'relish'
 import ConfigurePlugins from './configuration/plugins'
 
+
 const relish = Relish()
 
 const env = process.env.NODE_ENV || 'development'
